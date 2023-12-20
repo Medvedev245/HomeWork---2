@@ -45,7 +45,6 @@ const add = async (req, res, next) => {
     const { error } = contactAddSchema.validate(req.body);
     if (error) {
       throw HttpError(400, error.message);
-      console.log(error.message);
     }
     const result = await addContact(req.body);
     res.status(201).json(result);
